@@ -5,14 +5,14 @@
 <div class="text-left" style="margin-top: 5%">
   <button type="button" class="btn btn-primary" style="margin-top: 5%;" onclick="goToOptions();">Back</button>
 </div>
-<h3 class="header" style="text-align: center;margin-top: 10%;">LOREM IPSUM LOREM IPSUM LOREM IPSUM</h3>
+<h3 class="header" style="text-align: center;margin-top: 10%;">TELL YOUR FUTURE EMPLOYERS MORE ABOUT YOUR JOBTIVITY!</h3>
 <div class="form-group">
-  <label>I Just...</label> <i>(10 - 30 characters)</i>
+  <label><em>I Just...<em></label> <i>(10 - 30 characters)</i>
   <%= f.text_area :title, class: "form-control", id: "capture-title", placeholder: "Describe the summary of your activity! Eg:- volunteered at a soup kitchen event!" %>
   <div class="invalid-feedback" id="capture-title-msg"></div>
 </div>
 <div class="form-group">
-  <label>and this will help me be a better employer because I learned about... <i>(50 - 150 characters)</i></label>
+  <label><em>and this will help me be a better employer because I learned about...<em> <i>(50 - 150 characters)</i></label>
   <%= f.text_area :content, class: "form-control", id: "capture-desc", placeholder: "Describe what you learned through the activity! Eg “how to work in a team of people who are passionate and selfless. I also started thinking about how to use technology to help homeless people earn income!" %>
   <div class="invalid-feedback" id="capture-desc-msg"></div>
 </div>
