@@ -1,0 +1,471 @@
+<div class="sub-container">
+	<div class="row sub-heading">
+	  <div class="sub-heading-name col text-center">
+	  	<%= user_info.name %>
+	  </div>
+	  <div class="sub-heading-sub-option col text-center" id="sub-heading-sub-option">
+	  </div>
+	  <div class="sub-heading-option col text-center" id="sub-heading-option">
+	  </div>  
+	</div>
+	<div class="header sub-info">
+		<div class="trophy-display">
+			<span class="points">160</span><%= image_tag(asset_path('trophy-cup.png')) %>
+		</div>
+		<div class="sub-info-title">
+		  <strong><%= user_info.title %></strong>
+		</div>
+		<div class="sub-info-content">
+		  <%= simple_format(user_info.content) %>
+		</div>
+		<div class="sub-info-share-url">
+		  <%= user_info.share_url %>
+		</div>
+	</div>
+	<div class="btn-group">
+		<div class="wow-link">
+			<%= link_to "javascript:;", class: "btn btn-primary" do %>
+			  WOW <span class="wow-text badge badge-light">0</span>
+			<% end %>
+		</div>
+		<div class="text-right comment-link">
+			<%= link_to "COMMENT", "javascript:;", class: "btn btn-primary" %>
+		</div>
+	</div>
+</div>
+<!-- SEEDED DATA -->
+<div class="sub-container">
+	<div class="row sub-heading">
+	  <div class="sub-heading-name col text-center">
+	  	<%= user_info.friend_1_name %>
+	  </div>
+	  <div class="sub-heading-sub-option col text-center">
+	  </div>
+	  <div class="sub-heading-option col text-center">
+	  	<%= "Networking" %>
+	  </div>
+	</div>
+	<div class="header sub-info">
+		<div class="trophy-display">
+			<span class="points">1625</span><%= image_tag(asset_path('trophy-cup.png')) %>
+		</div>
+		<div class="sub-info-title">
+		  <strong><%= "Connected with CEO of CIMB" %></strong>
+		</div>
+		<div class="sub-info-content">
+		  <%= simple_format("Had 5-min chat with Tengku Zafrul. Told him about my society's event and how CIMB can help!") %>
+		</div>
+		<!-- <div class="sub-info-share-url">
+		  <%#= "https://example.com" %>
+		</div> -->
+	</div>
+	<div class="btn-group">
+		<div class="wow-link">
+			<%= link_to "javascript:;", class: "btn btn-primary" do %>
+			  WOW <span class="wow-text badge badge-light">6</span>
+			<% end %>
+		</div>
+		<div class="text-right comment-link">
+			<%= link_to "COMMENT", "javascript:;", class: "btn btn-primary" %>
+		</div>
+	</div>
+</div>
+<div class="sub-container">
+	<div class="row sub-heading">
+	  <div class="sub-heading-name col text-center">
+	  	<%= user_info.friend_2_name %>
+	  </div>
+	  <div class="sub-heading-sub-option col text-center">
+	  	<%= "Education" %>
+	  </div>
+	  <div class="sub-heading-option col text-center">
+	  	<%= "Knowledge" %>
+	  </div>
+	</div>
+	<div class="header sub-info">
+		<div class="trophy-display">
+			<span class="points">1250</span><%= image_tag(asset_path('trophy-cup.png')) %>
+		</div>
+		<div class="sub-info-title">
+		  <strong><%= "Learned about Teach For America" %></strong>
+		</div>
+		<div class="sub-info-content">
+		  <%= simple_format("As I was aiming to work for TFM, I read an article about TFA. I learned about how I can help expand TFM towards ASEAN!") %>
+		</div>
+		<div class="sub-info-share-url">
+		  <%= "https://example.com" %>
+		</div>
+	</div>
+	<div class="btn-group">
+		<div class="wow-link">
+			<%= link_to "javascript:;", class: "btn btn-primary" do %>
+			  WOW <span class="wow-text badge badge-light">8</span>
+			<% end %>
+		</div>
+		<div class="text-right comment-link">
+			<%= link_to "COMMENT", "javascript:;", class: "btn btn-primary" %>
+		</div>
+	</div>
+</div>
+<div class="sub-container">
+	<div class="row sub-heading">
+	  <div class="sub-heading-name col text-center">
+	  	<%= user_info.friend_3_name %>
+	  </div>
+	  <div class="sub-heading-sub-option col text-center">
+	  	<%= "Tech" %>
+	  </div>
+	  <div class="sub-heading-option col text-center">
+	  	<%= "Knowledge" %>
+	  </div>
+	</div>
+	<div class="header sub-info">
+		<div class="trophy-display">
+			<span class="points">980</span><%= image_tag(asset_path('trophy-cup.png')) %>
+		</div>
+		<div class="sub-info-title">
+		  <strong><%= "Watched Bitcoin Documentary" %></strong>
+		</div>
+		<div class="sub-info-content">
+		  <%= simple_format("Watched youtube documentary on Bitcoin. I learned how this can apply to any tech application!") %>
+		</div>
+		<div class="sub-info-share-url">
+		  <%= "https://example.com" %>
+		</div>
+	</div>
+	<div class="btn-group">
+		<div class="wow-link">
+			<%= link_to "javascript:;", class: "btn btn-primary" do %>
+			  WOW <span class="wow-text badge badge-light">10</span>
+			<% end %>
+		</div>
+		<div class="text-right comment-link">
+			<%= link_to "COMMENT", "javascript:;", class: "btn btn-primary" %>
+		</div>
+	</div>
+</div>
+<div class="sub-container">
+	<div class="row sub-heading">
+	  <div class="sub-heading-name col text-center">
+	  	<%= user_info.friend_1_name %>
+	  </div>
+	  <div class="sub-heading-sub-option col text-center">
+	  	<%= "Writing" %>
+	  </div>
+	  <div class="sub-heading-option col text-center">
+	  	<%= "Skill" %>
+	  </div>
+	</div>
+	<div class="header sub-info">
+		<div class="trophy-display">
+			<span class="points">900</span><%= image_tag(asset_path('trophy-cup.png')) %>
+		</div>
+		<div class="sub-info-title">
+		  <strong><%= "Wrote about Budget" %></strong>
+		</div>
+		<div class="sub-info-content">
+		  <%= simple_format("I wrote in my blog on how Budget 2019 can help university student like me. However, the tech tax is something I disagree.") %>
+		</div>
+		<div class="sub-info-share-url">
+		  <%= "https://example.com" %>
+		</div>
+	</div>
+	<div class="btn-group">
+		<div class="wow-link">
+			<%= link_to "javascript:;", class: "btn btn-primary" do %>
+			  WOW <span class="wow-text badge badge-light">12</span>
+			<% end %>
+		</div>
+		<div class="text-right comment-link">
+			<%= link_to "COMMENT", "javascript:;", class: "btn btn-primary" %>
+		</div>
+	</div>
+</div>
+<div class="sub-container">
+	<div class="row sub-heading">
+	  <div class="sub-heading-name col text-center">
+	  	<%= user_info.friend_2_name %>
+	  </div>
+	  <div class="sub-heading-sub-option col text-center">
+	  	<%= "Public Speaking" %>
+	  </div>
+	  <div class="sub-heading-option col text-center">
+	  	<%= "Skill" %>
+	  </div>
+	</div>
+	<div class="header sub-info">
+		<div class="trophy-display">
+			<span class="points">1005</span><%= image_tag(asset_path('trophy-cup.png')) %>
+		</div>
+		<div class="sub-info-title">
+		  <strong><%= "Promoted NALS2019" %></strong>
+		</div>
+		<div class="sub-info-content">
+		  <%= simple_format("I gave 5 minutes announcement about NALS 2019 in front of 100 students. It was nerve wrecking but I think I got some people interested") %>
+		</div>
+		<!-- <div class="sub-info-share-url">
+		  <%#= "https://example.com" %>
+		</div> -->
+	</div>
+	<div class="btn-group">
+		<div class="wow-link">
+			<%= link_to "javascript:;", class: "btn btn-primary" do %>
+			  WOW <span class="wow-text badge badge-light">30</span>
+			<% end %>
+		</div>
+		<div class="text-right comment-link">
+			<%= link_to "COMMENT", "javascript:;", class: "btn btn-primary" %>
+		</div>
+	</div>
+</div>
+<div class="sub-container">
+	<div class="row sub-heading">
+	  <div class="sub-heading-name col text-center">
+	  	<%= user_info.friend_3_name %>
+	  </div>
+	  <div class="sub-heading-sub-option col text-center">
+	  </div>
+	  <div class="sub-heading-option col text-center">
+	  	<%= "Problem Solving" %>
+	  </div>
+	</div>
+	<div class="header sub-info">
+		<div class="trophy-display">
+			<span class="points">975</span><%= image_tag(asset_path('trophy-cup.png')) %>
+		</div>
+		<div class="sub-info-title">
+		  <strong><%= "Managed to get out to volunteer" %></strong>
+		</div>
+		<div class="sub-info-content">
+		  <%= simple_format("I have a lecture at the same time with volunteer event. I managed to talk to the lecturer to do extra assignment so I can skip the lecture") %>
+		</div>
+		<!-- <div class="sub-info-share-url">
+		  <%#= "https://example.com" %>
+		</div> -->
+	</div>
+	<div class="btn-group">
+		<div class="wow-link">
+			<%= link_to "javascript:;", class: "btn btn-primary" do %>
+			  WOW <span class="wow-text badge badge-light">25</span>
+			<% end %>
+		</div>
+		<div class="text-right comment-link">
+			<%= link_to "COMMENT", "javascript:;", class: "btn btn-primary" %>
+		</div>
+	</div>
+</div>
+<div class="sub-container">
+	<div class="row sub-heading text">
+	  <div class="sub-heading-name col text-center">
+	  	<%= user_info.friend_1_name %>
+	  </div>
+	  <div class="sub-heading-sub-option col text-center">
+	  	<%= "Marketing" %>
+	  </div>
+	  <div class="sub-heading-option col text-center">
+	  	<%= "Entrepreneur" %>
+	  </div>
+	</div>
+	<div class="header sub-info">
+		<div class="trophy-display">
+			<span class="points">1100</span><%= image_tag(asset_path('trophy-cup.png')) %>
+		</div>
+		<div class="sub-info-title">
+		  <strong><%= "Promoted YCMS on Facebook & Instagram" %></strong>
+		</div>
+		<div class="sub-info-content">
+		  <%= simple_format("As a convenor, I managed YCM Social Meida pages to promote the summit. I learned that FB is the better platform for YCM crowd.") %>
+		</div>
+		<div class="sub-info-share-url">
+		  <%= "https://example.com" %>
+		</div>
+	</div>
+	<div class="btn-group">
+		<div class="wow-link">
+			<%= link_to "javascript:;", class: "btn btn-primary" do %>
+			  WOW <span class="wow-text badge badge-light">50</span>
+			<% end %>
+		</div>
+		<div class="text-right comment-link">
+			<%= link_to "COMMENT", "javascript:;", class: "btn btn-primary" %>
+		</div>
+	</div>
+</div>
+<div class="sub-container">
+	<div class="row sub-heading">
+	  <div class="sub-heading-name col text-center">
+	  	<%= user_info.friend_2_name %>
+	  </div>
+	  <div class="sub-heading-sub-option col text-center">
+	  </div>
+	  <div class="sub-heading-option col text-center">
+	  	<%= "Volunteering" %>
+	  </div>
+	</div>
+	<div class="header sub-info">
+		<div class="trophy-display">
+			<span class="points">1050</span><%= image_tag(asset_path('trophy-cup.png')) %>
+		</div>
+		<div class="sub-info-title">
+		  <strong><%= "Kechara Soup Kitchen" %></strong>
+		</div>
+		<div class="sub-info-content">
+		  <%= simple_format("This is my 5th time volunteering with KSK. Really made me think how to help homeless to start working again.") %>
+		</div>
+		<!-- <div class="sub-info-share-url">
+		  <%#= "https://example.com" %>
+		</div> -->
+	</div>
+	<div class="btn-group">
+		<div class="wow-link">
+			<%= link_to "javascript:;", class: "btn btn-primary" do %>
+			  WOW <span class="wow-text badge badge-light">45</span>
+			<% end %>
+		</div>
+		<div class="text-right comment-link">
+			<%= link_to "COMMENT", "javascript:;", class: "btn btn-primary" %>
+		</div>
+	</div>
+</div>
+<div class="sub-container">
+	<div class="row sub-heading">
+	  <div class="sub-heading-name col text-center">
+	  	<%= user_info.friend_3_name %>
+	  </div>
+	  <div class="sub-heading-sub-option col text-center">
+	  </div>
+	  <div class="sub-heading-option col text-center">
+	  	<%= "Knowledge" %>
+	  </div>
+	</div>
+	<div class="header sub-info">
+		<div class="trophy-display">
+			<span class="points">1010</span><%= image_tag(asset_path('trophy-cup.png')) %>
+		</div>
+		<div class="sub-info-title">
+		  <strong><%= "Finished Billion Dollar Whale" %></strong>
+		</div>
+		<div class="sub-info-content">
+		  <%= simple_format("I just finished the book. I learned about the problem that greed can bring. Money is not everything!") %>
+		</div>
+		<div class="sub-info-share-url">
+		  <%= "https://example.com" %>
+		</div>
+	</div>
+	<div class="btn-group">
+		<div class="wow-link">
+			<%= link_to "javascript:;", class: "btn btn-primary" do %>
+			  WOW <span class="wow-text badge badge-light">20</span>
+			<% end %>
+		</div>
+		<div class="text-right comment-link">
+			<%= link_to "COMMENT", "javascript:;", class: "btn btn-primary" %>
+		</div>
+	</div>
+</div>
+<div class="restart-btn text-center">
+	<%= link_to "Complete test with a survey", "https://docs.google.com/forms/d/1MqvPS_5ZO58JurtR3gClWbYX3JXWtHkqohErB0xztN4/prefill", class: "btn btn-primary", target: "_blank" %>
+</div>
+<style type="text/css">
+	.sub-container{
+		box-sizing: border-box;    
+    width: 90%;
+    padding: 5%;   
+    border: 3px solid blue;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    min-height: 315px;
+    max-height: 750px;
+	}
+	.d-inline{
+    padding-right: 5%;
+	}
+	.btn-group{
+		margin-top: 5%;
+		margin-bottom: -15%;
+	}
+	.comment-link{
+		margin-left: 20%;
+	}
+	.comment-link > a {
+		width: 140%;
+	}
+	.sub-heading{
+		margin-top: -6%;
+		margin-left: -5%;
+		font-size: 12.5px;
+		width: 110%;
+	}
+	.sub-heading-name{
+		background-color: #FF69B4;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-weight: bold;
+		font-size: 14px;
+	}
+	.sub-heading-option{
+		background-color: #00FFFF;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.sub-heading-sub-option{
+		background-color: #6B8E23;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.sub-info-title{
+		margin-top: 10%;
+		margin-left: -2%;
+		color: #FFFFFF;
+		font-size: 16px;
+		font-weight: 900 !important;
+	}
+	.sub-info-content{
+		margin-top: 10%;
+		word-wrap: break-word;
+		min-height: 125px;
+		color: #FFFFFF;
+	}
+	.sub-info-share-url{
+		margin-top: 5%;
+		color: #FFFFFF;
+	}
+	.restart-btn{
+		text-align: right;
+		margin-top: 5%;
+		margin-right: 5%;
+		margin-bottom: 5%;
+	}
+	#time-line-data{
+		margin-top: -10%;
+	}
+	.wow-link{
+		margin-left: 2%;
+	}
+	.wow-link > a{
+		width: 140%;
+	}
+	.trophy-display{
+		background-color: yellow;
+		min-width: 20px;
+		max-width: 63px;
+		float: right;
+		margin-top: -7%;
+	}
+	.points{
+		font-size: 13px;
+	}
+</style>
+
+<script type="text/javascript">
+	$(".wow-link").click(function(){
+		var counter = $(this).find(".wow-text").text();
+	  counter++ ;
+	  $(this).find(".wow-text").text(counter);
+	})
+</script>

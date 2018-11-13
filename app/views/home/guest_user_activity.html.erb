@@ -1,0 +1,137 @@
+<div class="container">
+	<span class="sub-option-text" style="float: right;margin-top: 1%;margin-right: 13%;">Others</span>&nbsp;&nbsp;<span class="option-text" style="float: right;margin-top: 1%;margin-right: -32%;">Others</span>
+	<!-- <div class="text-left" style="margin-top: -5%">
+	  <button type="button" class="btn btn-primary" onclick="goToOptions();">Back</button>
+	</div> -->
+	<br><br>
+	<h3 style="text-align: center;color: #FFFFFF">LOREM IPSUM LOREM IPSUM LOREM IPSUM</h3>
+	<%= form_for @user_info, remote: true, html: {id: "guest-form", novalidate: true} do |f| %>
+		<div class="form-group">
+		  <%= f.label "TITLE" %>
+		  <%= f.text_field :title, class: "form-control", id: "guest-title" %>
+		  <div class="invalid-feedback" id="guest-title-msg"></div>
+		</div>
+		<div class="form-group">
+		  <%= f.label "CONTENT" %>
+		  <%= f.text_area :content, class: "form-control", id: "guest-content" %>
+		  <div class="invalid-feedback" id="guest-content-msg"></div>
+		</div>
+		<div class="form-group">
+		  <%= f.label "SHARE URL" %>
+		  <%= f.url_field :share_url, class: "form-control", id: "guest-share-url" %>
+		  <div class="invalid-feedback" id="guest-share-url-msg"></div>
+		</div>
+		<div class="text-center">
+		  <button type="submit" class="btn btn-primary" id="guest-submit-btn">POST ACTIVITY</button>
+		</div>
+	<% end %>
+</div>
+
+<!-- Modal -->
+<div id="user-activity-acknowledgement-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog" style="margin-top: 50%;">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h5><strong>CONGRATULATIONS!</strong></h5>
+        <div class="modal-trophy-display">
+					<span class="modal-points">160</span><%= image_tag(asset_path('trophy-cup.png')) %>
+				</div>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body text-center" id="user-activity-acknowledgement-msg">
+      	You have posted an activity. 4 more posts to unlock gifts!
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="time-line-data"></div>
+
+<style type="text/css">
+  .sub-option-text{
+    background-color: #ADD8E6;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .option-text{
+    background-color: #FFC0CB;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .container{
+ 	background-image: url('<%= asset_path('back-to-school.png') %>');
+  opacity: 1;
+ }
+ .modal-trophy-display{
+		background-color: yellow;
+		min-width: 20px;
+		max-width: 63px;
+		float: right;
+		margin-left: 10%;
+	}
+	.modal-points{
+		font-size: 13px;
+	}
+</style>
+
+<script type="text/javascript">
+	function isUrlValid(url) {
+    return /^(https?|s?ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(url);
+}
+
+	$("#guest-submit-btn").click(function(e){
+    e.preventDefault();
+    var title = $("#guest-title").val();
+    var content = $("#guest-content").val();
+    var share_url = $("#guest-share-url").val();
+    
+    if ((title.length == 0) && (content.length == 0) && (share_url.length == 0)){
+    	$("#guest-title").css("border", "1px solid red");
+    	$("#guest-content").css("border", "1px solid red");
+    	$("#guest-share-url").css("border", "1px solid red");
+    	$(".invalid-feedback").text("Please fill up this field");
+    }
+    else if (title.length == 0){
+    	$("#guest-title").css("border", "1px solid red");
+    	$("#guest-title-msg").text("Please fill up this field");
+    }
+    else if (title.length < 10){
+    	$("#guest-title").css("border", "1px solid red");
+    	$("#guest-title-msg").text("Minimum 10 characters");
+    }
+    else if (content.length == 0){
+    	$("#guest-title").css("border", "none");
+    	$("#guest-title-msg").text("");
+    	$("#guest-content").css("border", "1px solid red");
+    	$("#guest-content-msg").text("Please fill up this field");
+    }
+    else if (content.length < 100){
+    	$("#guest-title").css("border", "none");
+    	$("#guest-title-msg").text("");
+    	$("#guest-content").css("border", "1px solid red");
+    	$("#guest-content-msg").text("Minimum 100 characters");
+    }
+    else if (share_url.length == 0){
+    	$("#guest-title").css("border", "none");
+    	$("#guest-title-msg").text("");
+    	$("#guest-content").css("border", "none");
+    	$("#guest-content-msg").text("");
+    	$("#guest-share-url").css("border", "1px solid red");
+    	$("#guest-share-url-msg").text("Please fill up this field");
+    }
+    else if ((share_url.length != 0) && (!isUrlValid(share_url))){
+    	$("#guest-title").css("border", "none");
+    	$("#guest-title-msg").text("");
+    	$("#guest-content").css("border", "none");
+    	$("#guest-content-msg").text("");
+    	$("#guest-share-url").css("border", "1px solid red");
+    	$("#guest-share-url-msg").text("Please enter a valid URL format");
+    }
+    else{
+      $("#guest-form").submit();
+    }
+  });
+</script>

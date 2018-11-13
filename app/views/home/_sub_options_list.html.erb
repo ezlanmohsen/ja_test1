@@ -1,0 +1,206 @@
+<span class="option-text" style="float: right;margin-top: -7%;margin-right: -2%;"></span>
+<div class="text-left" style="margin-top: 5%">
+	<button type="button" class="btn btn-primary" onclick="goToOptions();">Back</button>
+</div>
+<br>
+<h3 style="text-align: center; color: #FFFFFF;" class="my-custom-heading header">LOREM IPSUM LOREM IPSUM LOREM IPSUM</h3><br>
+<div id="knowledge-options">
+	<div class="row">
+		<div class="form-group col">
+		  <%= f.text_field :sub_option, value: "Agriculture", class: "text-center sub-options-radio form-control", readonly: true %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group col">
+			<%= f.text_field :sub_option, value: "Arts & Entertainment", class: "text-center sub-options-radio form-control", readonly: true %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group col">
+      <%= f.text_field :sub_option, value: "Biotechnology", class: "text-center sub-options-radio form-control", readonly: true %>
+    </div>
+  </div>
+  <div class="row">
+  	<div class="form-group col">
+		  <%= f.text_field :sub_option, value: "Business Admin", class: "text-center sub-options-radio form-control", readonly: true %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group col">
+      <%= f.text_field :sub_option, value: "Chemistry & Physics", class: "text-center sub-options-radio form-control", readonly: true %>
+    </div>
+  </div>
+	<div class="row">
+		<div class="form-group col">
+      <%= f.text_field :sub_option, value: "Culture", class: "text-center sub-options-radio form-control", readonly: true %>
+    </div>
+  </div>
+  <div class="row">
+		<div class="form-group col">
+      <%= f.text_field :sub_option, value: "Education", class: "text-center sub-options-radio form-control", readonly: true %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col">
+  		<%= f.text_field :sub_option, value: "Energy", class: "text-center sub-options-radio form-control", readonly: true %>
+  	</div>
+  </div>
+  <div class="row">
+  	<div class="form-group col">
+  		<%= f.text_field :sub_option, value: "Engineering", class: "text-center sub-options-radio form-control", readonly: true %>
+  	</div>
+  </div>
+  <div class="row">
+		<div class="form-group col">
+  		<%= f.text_field :sub_option, value: "Environment", class: "text-center sub-options-radio form-control", readonly: true %>
+  	</div>
+	</div>
+	<div class="row">
+		<div class="form-group col">
+      <%= f.text_field :sub_option, value: "Finance", class: "text-center sub-options-radio form-control", readonly: true %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col">
+  		<%= f.text_field :sub_option, value: "Geography", class: "text-center sub-options-radio form-control", readonly: true %>
+  	</div>
+  </div>
+  <div class="row">
+    <div class="form-group col">
+  		<%= f.text_field :sub_option, value: "History & Philosophy", class: "text-center sub-options-radio form-control", readonly: true %>
+  	</div>
+  </div>
+	<div class="row">
+		<div class="form-group col">
+  		<%= f.text_field :sub_option, value: "Law", class: "text-center sub-options-radio form-control", readonly: true %>
+  	</div>
+  </div>
+  <div class="row">
+  	<div class="form-group col">
+      <%= f.text_field :sub_option, value: "Media & Communications", class: "text-center sub-options-radio form-control", readonly: true %>
+    </div>
+  </div>
+  <div class="row">
+		<div class="form-group col">
+      <%= f.text_field :sub_option, value: "Medicine", class: "text-center sub-options-radio form-control", readonly: true %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col">
+  		<%= f.text_field :sub_option, value: "Politics & Sociology", class: "text-center sub-options-radio form-control", readonly: true %>
+  	</div>
+  </div>
+  <div class="row">
+  	<div class="form-group col">
+  		<%= f.text_field :sub_option, value: "Pscyhology", class: "text-center sub-options-radio form-control", readonly: true %>
+  	</div>
+  </div>
+  <div class="row">
+		<div class="form-group col">
+      <%= f.text_field :sub_option, value: "Public Policy", class: "text-center sub-options-radio form-control", readonly: true %>
+    </div>
+  </div>
+  <div class="row">
+		<div class="form-group col">
+      <%= f.text_field :sub_option, value: "Sports", class: "text-center sub-options-radio form-control", readonly: true %>
+    </div>
+  </div>
+  <div class="row">
+		<div class="form-group col">
+			<%= f.text_field :sub_option, value: "Technology & Software", class: "text-center sub-options-radio form-control", readonly: true %>
+		</div>
+  </div>
+  <div class="row">
+		<div class="form-group col">
+			<%= f.text_field :option_label, class: "text-center form-control", id: "custom-knowledge-option",placeholder: "Others" %>
+			<div class="invalid-feedback" id="custom-knowledge-option-msg"></div>
+		</div>
+  </div>
+  <div class="text-center knowledge-next-btn">
+		<button type="button" class="btn btn-primary">Next</button>
+	</div>
+</div>
+
+<div id="skill-options">
+	<div class="row account-div">
+		<div class="form-group col">
+      <%= f.text_field :sub_option, value: "Accounting/Bookeeping", class: "text-center sub-options-radio form-control", readonly: true %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col data-analysis-div">
+  		<%= f.text_field :sub_option, value: "Data Analysis", class: "text-center sub-options-radio form-control", readonly: true %>
+  	</div>
+  </div>
+  <div class="row">
+		<div class="form-group col">
+      <%= f.text_field :sub_option, value: "Designing", class: "text-center sub-options-radio form-control", readonly: true %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col direct-selling-div">
+  		<%= f.text_field :sub_option, value: "Direct Selling", class: "text-center sub-options-radio form-control", readonly: true %>
+  	</div>
+  </div>
+  <div class="row">
+		<div class="form-group col">
+      <%= f.text_field :sub_option, value: "Leadership", class: "text-center sub-options-radio form-control", readonly: true %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col marketing-div">
+  		<%= f.text_field :sub_option, value: "Marketing/Social Media", class: "text-center sub-options-radio form-control", readonly: true %>
+  	</div>
+  </div>
+	<div class="row public-speaking-div">
+		<div class="form-group col">
+      <%= f.text_field :sub_option, value: "Public Speaking", class: "text-center sub-options-radio form-control", readonly: true %>
+    </div>
+  </div>
+  <div class="row writing-div">
+    <div class="form-group col">
+  		<%= f.text_field :sub_option, value: "Writing", class: "text-center sub-options-radio form-control", readonly: true %>
+  	</div>
+  </div>
+  <div class="row">
+		<div class="form-group col">
+			<%= f.text_field :option_label, class: "text-center form-control", id: "custom-skill-option", placeholder: "Others" %>
+			<div class="invalid-feedback" id="custom-skill-option-msg"></div>
+		</div>
+  </div>
+  <div class="text-center skill-next-btn">
+		<button type="button" class="btn btn-primary">Next</button>
+	</div>
+</div>
+
+<style type="text/css">
+	.sub-options-radio{
+		font-size: 14px;
+	}
+</style>
+
+<script type="text/javascript">
+	$(".knowledge-next-btn").click(function(e){
+		if ($("#custom-knowledge-option").val().length == 0) {
+      e.preventDefault();
+      $("#custom-knowledge-option").css("border", "1px solid red");
+      $("#custom-knowledge-option-msg").text("Please fill out this field");
+		}
+		else{
+			var current = $("#custom-knowledge-option");
+			goToContent(current);
+		}
+	})
+
+	$(".skill-next-btn").click(function(e){
+		if ($("#custom-skill-option").val().length == 0) {
+      e.preventDefault();
+      $("#custom-skill-option").css("border", "1px solid red");
+      $("#custom-skill-option-msg").text("Please fill out this field");
+		}
+		else{
+			var current = $("#custom-skill-option");
+			goToContent(current);
+		}
+	})
+</script>

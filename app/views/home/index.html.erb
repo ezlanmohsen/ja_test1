@@ -1,0 +1,148 @@
+<div class="container">
+	<h4 class="text-center header">THANK YOU!<br>TO BEGIN, PLEASE ENTER YOUR NAME & NAMES OF YOUR 3 FRIENDS.</h4>
+	<br>
+	<br>
+	<div style="text-align: center;">
+		<%= form_for @user_info, html: {id: "index-form", novalidate: true} do |f| %>
+		<div class="form-group">
+			<%= f.label :your_name %>: <i>(Must be more than 3 characters)</i>
+			<input name="user_information[name]" id="index-name" class="form-control">
+			<div class="invalid-feedback" id="index-name-msg"></div>
+		</div>
+		<div class="form-group">
+			<%= f.label :friend_1 %>: <i>(Must be more than 3 characters)</i>
+			<input name="user_information[friend_1_name]" id="index-friend-1-name" class="form-control">
+			<div class="invalid-feedback" id="index-friend-1-name-msg"></div>
+		</div>
+		
+		<div class="form-group">
+			<%= f.label :friend_2 %>: <i>(Must be more than 3 characters)</i>
+			<input name="user_information[friend_2_name]" id="index-friend-2-name" class="form-control">
+			<div class="invalid-feedback" id="index-friend-2-name-msg"></div>
+		</div>
+		<div class="form-group">
+			<%= f.label :friend_3 %>: <i>(Must be more than 3 characters)</i>
+			<input name="user_information[friend_3_name]" id="index-friend-3-name" class="form-control">
+			<div class="invalid-feedback" id="index-friend-3-name-msg"></div>
+		</div>
+		<div class="text-center">
+		  <%= f.submit "PROCEED", class: "btn btn-primary", id: "index-submit-btn" %>
+		</div>
+		<% end %>
+	</div>
+</div>
+
+<script>
+  function validate_form(){
+    var name = $("#index-name").val();
+    var friend_1_name = $("#index-friend-1-name").val();
+    var friend_2_name = $("#index-friend-2-name").val();
+    var friend_3_name = $("#index-friend-3-name").val();
+    
+    if ((name.length == 0) && (friend_1_name.length == 0) && (friend_2_name.length == 0) && (friend_3_name.length == 0)){
+      $("#index-name").css("border", "1px solid red");
+      $("#index-friend-1-name").css("border", "1px solid red");
+      $("#index-friend-2-name").css("border", "1px solid red");
+      $("#index-friend-3-name").css("border", "1px solid red");
+      $(".invalid-feedback").text("Please fill up this field");
+    }
+    else if (name.length == 0){
+      $("#index-name").css("border", "1px solid red");
+      $("#index-name-msg").text("Please fill up this field");
+    }
+    else if (name.length < 3){
+      $("#index-name").css("border", "1px solid red");
+      $("#index-name-msg").text("Minimum 3 characters");
+    }
+    else if (friend_1_name.length == 0){
+      $("#index-name").css("border", "none");
+      $("#index-name-msg").text("");
+      $("#index-friend-1-name").css("border", "1px solid red");
+      $("#index-friend-1-name-msg").text("Please fill up this field");
+    }
+    else if (friend_1_name.length < 3){
+      $("#index-name").css("border", "none");
+      $("#index-name-msg").text("");
+      $("#index-friend-1-name").css("border", "1px solid red");
+      $("#index-friend-1-name-msg").text("Minimum 3 characters");
+    }
+    else if (friend_2_name.length == 0){
+      $("#index-name").css("border", "none");
+      $("#index-name-msg").text("");
+      $("#index-friend-1-name").css("border", "none");
+      $("#index-friend-1-name-msg").text("");
+      $("#index-friend-2-name").css("border", "1px solid red");
+      $("#index-friend-2-name-msg").text("Please fill up this field");
+    }
+    else if (friend_2_name.length < 3){
+      $("#index-name").css("border", "none");
+      $("#index-name-msg").text("");
+      $("#index-friend-1-name").css("border", "none");
+      $("#index-friend-1-name-msg").text("");
+      $("#index-friend-2-name").css("border", "1px solid red");
+      $("#index-friend-2-name-msg").text("Minimum 3 characters");
+    }
+    else if (friend_3_name.length == 0){
+      $("#index-name").css("border", "none");
+      $("#index-name-msg").text("");
+      $("#index-friend-1-name").css("border", "none");
+      $("#index-friend-1-name-msg").text("");
+      $("#index-friend-2-name").css("border", "none");
+      $("#index-friend-2-name-msg").text("");
+      $("#index-friend-3-name").css("border", "1px solid red");
+      $("#index-friend-3-name-msg").text("Please fill up this field");
+    }
+    else if (friend_3_name.length < 3){
+      $("#index-name").css("border", "none");
+      $("#index-name-msg").text("");
+      $("#index-friend-1-name").css("border", "none");
+      $("#index-friend-1-name-msg").text("");
+      $("#index-friend-2-name").css("border", "none");
+      $("#index-friend-2-name-msg").text("");
+      $("#index-friend-3-name").css("border", "1px solid red");
+      $("#index-friend-3-name-msg").text("Minimum 3 characters");
+    }
+    else{
+      $("#index-name").css("border", "none");
+      $("#index-name-msg").text("");
+      $("#index-friend-1-name").css("border", "none");
+      $("#index-friend-1-name-msg").text("");
+      $("#index-friend-2-name").css("border", "none");
+      $("#index-friend-2-name-msg").text("");
+      $("#index-friend-3-name").css("border", "none");
+      $("#index-friend-3-name-msg").text("");
+      //$("#index-form").submit();
+      return "true";
+    }
+  }
+  $("#index-submit-btn").click(function(e){
+    e.preventDefault();
+    validate_form();
+    var validate_form_result = validate_form();
+    if (validate_form_result == "true"){
+      $("#index-form").submit();
+    }
+  });
+
+  $("#index-name").on('focus keyup', function(){
+    validate_form();
+  });
+  $("#index-friend-1-name").on('focus keyup', function(){
+    validate_form();
+  });
+  $("#index-friend-2-name").on('focus keyup', function(){
+    validate_form();
+  });
+  $("#index-friend-3-name").on('focus keyup', function(){
+    validate_form();
+  });
+</script>
+
+<style type="text/css">
+.container{
+  background-color: #d4e2f9;
+ }
+ #index-submit-btn{
+   background-color: #2371ef;
+ }
+</style>

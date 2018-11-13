@@ -1,0 +1,132 @@
+<div class="option-group">
+  <div class="sub-option-text d-inline" style="margin-top: -7%;"></div>
+  <div class="option-text d-inline" id="capture-content-option-text"style="margin-top: -7%;"></div>
+</div>
+<div class="text-left" style="margin-top: 5%">
+  <button type="button" class="btn btn-primary" style="margin-top: 5%;" onclick="goToOptions();">Back</button>
+</div>
+<h3 class="header" style="text-align: center;margin-top: 10%;">LOREM IPSUM LOREM IPSUM LOREM IPSUM</h3>
+<div class="form-group">
+  <label>I Just...</label> <i>(10 - 30 characters)</i>
+  <%= f.text_area :title, class: "form-control", id: "capture-title", placeholder: "Describe the summary of your activity! Eg:- volunteered at a soup kitchen event!" %>
+  <div class="invalid-feedback" id="capture-title-msg"></div>
+</div>
+<div class="form-group">
+  <label>and this will help me be a better employer because I learned about... <i>(50 - 150 characters)</i></label>
+  <%= f.text_area :content, class: "form-control", id: "capture-desc", placeholder: "Describe what you learned through the activity! Eg “how to work in a team of people who are passionate and selfless. I also started thinking about how to use technology to help homeless people earn income!" %>
+  <div class="invalid-feedback" id="capture-desc-msg"></div>
+</div>
+<div class="form-group share-url-div">
+  <%= f.label "SHARE URL" %>
+  <%= f.text_field :share_url, class: "form-control", id: "capture-share-url" %>
+</div>
+<div class="form-group upload-photo-div" style="display: none;">
+  <%= f.label "Upload Photo" %>
+  <%= f.file_field :photo, class: "form-control-file", id: "capture-share-url", disabled: true %>
+</div>
+<div class="text-center">
+  <button type="submit" class="btn btn-primary" id="post-submit-btn">POST ACTIVITY</button>
+</div>
+
+<style type="text/css">
+  .sub-option-text{
+    background-color: #ADD8E6;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #capture-title{
+    height: calc(5.25rem + 2px);
+  }
+  #capture-desc{
+    height: calc(9.75rem + 2px);
+  }
+  .option-group{
+    margin-left: 7%;
+    margin-top: -7%;
+    float: right;
+  }
+</style>
+
+<script type="text/javascript">
+  function validate_form(){
+    var title = $("#capture-title").val();
+    var content = $("#capture-desc").val();
+    
+    if ((title.length == 0) && (content.length == 0)){
+      $("#capture-title").css("border", "1px solid red");
+      $("#capture-desc").css("border", "1px solid red");
+      $(".invalid-feedback").text("Please fill up this field");
+    }
+    else if (title.length == 0){
+      $("#capture-title").css("border", "1px solid red");
+      $("#capture-title-msg").text("Please fill up this field");
+      $("#capture-desc").css("border", "none");
+      $("#capture-desc-msg").text("");
+    }
+    else if (title.length < 10){
+      $("#capture-title").css("border", "1px solid red");
+      $("#capture-title-msg").text("Minimum 10 characters");
+      $("#capture-desc").css("border", "none");
+      $("#capture-desc-msg").text("");
+    }
+    else if (title.length > 30){
+      $("#capture-title").css("border", "1px solid red");
+      $("#capture-title-msg").text("Maximum 30 characters");
+      $("#capture-desc").css("border", "none");
+      $("#capture-desc-msg").text("");
+    }
+    else if (content.length == 0){
+      $("#capture-title").css("border", "none");
+      $("#capture-title-msg").text("");
+      $("#capture-desc").css("border", "1px solid red");
+      $("#capture-desc-msg").text("Please fill up this field");
+    }
+    else if (content.length < 50){
+      $("#capture-title").css("border", "none");
+      $("#capture-title-msg").text("");
+      $("#capture-desc").css("border", "1px solid red");
+      $("#capture-desc-msg").text("Minimum 50 characters");
+    }
+    else if (content.length > 150){
+      $("#capture-title").css("border", "none");
+      $("#capture-title-msg").text("");
+      $("#capture-desc").css("border", "1px solid red");
+      $("#capture-desc-msg").text("Maximum 150 characters");
+    }
+    else{
+      $("#capture-title").css("border", "none");
+      $("#capture-title-msg").text("");
+      $("#capture-desc").css("border", "none");
+      $("#capture-desc-msg").text("");
+      return "true"
+    }
+  }
+  $("#post-submit-btn").click(function(e){
+    e.preventDefault();
+    validate_form();
+    var validate_form_result = validate_form();
+    if (validate_form_result == "true"){
+      var title = $("#capture-title").val();
+      var content = $("#capture-desc").val();
+      var share_url = $("#capture-share-url").val();
+      var option = $("#capture-content-option-text").text();
+      var sub_option = $(".sub-option-text").text();
+      console.log(option);
+      console.log(sub_option);
+      $.ajax({
+        type: "PATCH", 
+        url: "<%= user_information_path(@user_info) %>",
+        dataType: "script",
+        data: {"user_information": {title: title, content: content, share_url: share_url, option: option, sub_option: sub_option}}
+      });
+    }
+  });
+
+  $("#capture-title").on('focus keyup', function(){
+    validate_form();
+  });
+  $("#capture-desc").on('focus keyup', function(){
+    validate_form();
+  });
+</script>

@@ -1,0 +1,155 @@
+<%= form_for @user_info, html: {id: "my-form", novalidate: true} do |f| %>
+  <div class="container">
+		<div id="option-form">
+			<%= render partial: "options_form", locals:{f: f} %>
+		</div>
+		<div id="capture-string" style="display: none;">
+			<%= render partial: "capture_string", locals: {f: f} %>
+		</div>
+		<div id="sub-options" style="display: none;">
+			<%= render partial: "sub_options_list", locals: {f: f} %>
+		</div>
+		<div id="capture-content" style="display: none;">
+			<%= render partial: "capture_content", locals: {f: f} %>
+		</div>
+	</div>
+	<br><br>
+<% end %>
+
+<!-- Modal -->
+<div id="user-activity-acknowledgement-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog" style="margin-top: 50%;">
+    <!-- Modal content-->
+    <div class="modal-content" style="background-color: #2371ef; color: #FFFFFF;">
+      <div class="modal-header text-center">
+        <h5><strong>CONGRATULATIONS!</strong></h5>
+        <div class="modal-trophy-display">
+					<span class="modal-points" style="color: #000000 !important;">160</span><%= image_tag(asset_path('trophy-cup.png')) %>
+				</div>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body text-center" id="user-activity-acknowledgement-msg">
+      	You've succesfully posted an activity.<br>Do 4 more activities to unlock RM5 Funtivity reward!
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="time-line-data"></div>
+
+<style type="text/css">
+	.container{
+ 	background-color: #d4e2f9;
+ }
+ .modal-trophy-display{
+		background-color: yellow;
+		min-width: 45px;
+		max-width: 63px;
+		float: right;
+		margin-left: 2%;
+	}
+	.modal-points{
+		font-size: 13px;
+	}
+</style>
+
+<script type="text/javascript">
+    $('#networking').click(function(){
+			$("#option-form").hide();
+	    $("#capture-string").show();
+	    $(".option-text").text("Networking");
+	    $(".sub-heading-option").text("Networking");
+	    $(".my-custom-heading").text("Please put the email address of that important person");
+	    $(".share-url-div").hide();
+		});
+		$('#volunteering').click(function(){
+			$("#option-form").hide();
+	    $("#capture-string").show();
+	    $(".option-text").text("Volunteering");
+	    $(".my-custom-heading").text("Please put the name of the event");
+	    $(".share-url-div").hide();
+	    $(".upload-photo-div").show();
+		});
+		$('#problem_solving').click(function(){
+			$("#option-form").hide();
+	    $("#capture-string").show();
+	    $(".option-text").text("Problem-Solving");
+	    $(".my-custom-heading").text("Describe the problem that you solved?");
+	    $(".share-url-div").hide();
+		});
+		$('#knowledge').click(function(){
+			$("#option-form").hide();
+	    $("#capture-string").hide();
+	    $("#sub-options").show();
+	    $("#knowledge-options").show();
+	    $("#skill-options").hide();
+	    $(".option-text").text("Knowledge");
+	    $(".my-custom-heading").text("What did you learn about?");
+		});
+		$('#skill_1').click(function(){
+			$("#option-form").hide();
+	    $("#capture-string").hide();
+	    $("#sub-options").show();
+	    $("#skill-options").show();
+	    $("#knowledge-options").hide();
+	    $(".option-text").text("Skill");
+	    $(".my-custom-heading").text("What role did you play?");
+	    $(".share-url-div").hide();
+	    $(".public-speaking-div").hide();
+	    $(".writing-div").hide();
+	    $(".upload-photo-div").show();
+		});
+		$('#skill_2').click(function(){
+			$("#option-form").hide();
+	    $("#capture-string").hide();
+	    $("#sub-options").show();
+	    $("#skill-options").show();
+	    $("#knowledge-options").hide();
+	    $(".option-text").text("Skill");
+	    $(".my-custom-heading").text("What skill did you practice?");
+	    $(".share-url-div").hide();
+		});
+		$('#skill_3').click(function(){
+			$("#option-form").hide();
+	    $("#capture-string").hide();
+	    $("#sub-options").hide();
+	    $("#skill-options").hide();
+	    $("#knowledge-options").hide();
+	    $(".option-text").text("Skill");
+	    $(".share-url-div").hide();
+	    $("#capture-content").show();
+		});
+		$('#others').click(function(){
+			$("#option-form").hide();
+	    $("#capture-string").hide();
+	    $("#sub-options").hide();
+	    $("#skill-options").hide();
+	    $("#knowledge-options").hide();
+	    $(".option-text").text("Others");
+	    $("#capture-content").show();
+		});
+
+	function goToOptions(){
+		$("#option-form").show();
+	  $("#capture-string").hide();
+	  $("#sub-options").hide();
+	  $("#skill-options").hide();
+	  $("#knowledge-options").hide();
+	  $("#capture-content").hide();
+	}
+
+	function goToContent(current){
+		$("#option-form").hide();
+	  $("#capture-string").hide();
+	  $("#sub-options").hide();
+	  $("#skill-options").hide();
+	  $("#knowledge-options").hide();
+	  $("#capture-content").show();
+	  $(".sub-option-text").text(current.val());
+	}
+
+	$(".sub-options-radio").click(function(){
+		var current = $(this);
+		goToContent(current);
+	});
+</script>

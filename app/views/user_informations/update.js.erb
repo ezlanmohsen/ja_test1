@@ -1,0 +1,9 @@
+$("#sub-options").hide();
+$("#skill-options").hide();
+$("#knowledge-options").hide();
+$("#capture-content").hide();
+$(".container").hide();
+$('#user-activity-acknowledgement-modal').modal('show');
+$('#time-line-data').html("<%= j render partial: 'home/time_line_data', locals: {user_info: @user_info} %>");
+$("#sub-heading-option").text("<%= raw @option %>");
+$("#sub-heading-sub-option").text("<%= raw @sub_option %>");

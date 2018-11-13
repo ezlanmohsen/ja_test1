@@ -1,0 +1,39 @@
+<span class="option-text" style="float: right;margin-top: -7%;"></span>
+<br>
+<div class="text-left" style="margin-top: -5%">
+	<button type="button" class="btn btn-primary" onclick="goToOptions();">Back</button>
+</div>
+<br>
+<h3 style="text-align: center;" class="my-custom-heading header">LOREM IPSUM LOREM IPSUM LOREM IPSUM</h3>
+<div class="text-center option-string">
+	<%= f.text_field :option_label, class: "form-control", id: "custom-option-label" %>
+	<div class="invalid-feedback" id="custom-option-label-msg"></div>
+</div><br><br>
+<div class="text-center capture-string-next-btn">
+	<button type="button" class="btn btn-primary">Next</button>
+</div>
+
+<style type="text/css">
+	.option-string{
+		margin-top: 30%;
+	}
+	.option-text{
+		background-color: pink;
+	}
+</style>
+
+<script type="text/javascript">
+	$(".capture-string-next-btn").click(function(e){
+		if ($("#custom-option-label").val().length == 0) {
+      e.preventDefault();
+      $("#custom-option-label").css("border", "1px solid red");
+      $("#custom-option-label-msg").text("Please fill out this field");
+		}
+		else{
+			var option = $(".option-text").text();
+			var current = $("#custom-option-label");
+			$(".sub-heading-option").text(option);
+			goToContent(current);
+		}
+	})
+</script>
